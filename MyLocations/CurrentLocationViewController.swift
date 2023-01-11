@@ -58,6 +58,26 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         addressLabel.layer.backgroundColor = CGColor(red: 100, green: 0, blue: 0, alpha: 1)
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "TagLocation" {
+        let controller = segue.destination as! LocationDetailsViewController
+        controller.coordinate = location!.coordinate
+        controller.placemark = placemark
+      }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+      navigationController?.isNavigationBarHidden = false
+    }
+    
+    
     // MARK: - CLLocationManagerDelegate
     func locationManager(
       _ manager: CLLocationManager,
@@ -97,6 +117,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
 
         // 5
        if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
+           print("*** We're done!")
+           stopLocationManager()
            if distance > 0 {
                    performingReverseGeocoding = false
            }
