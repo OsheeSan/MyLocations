@@ -112,7 +112,7 @@
         <scene sceneID="Bs0-Th-e0O">
             <objects>
                 <tableViewController id="Txv-FW-C8Y" customClass="LocationDetailsViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="WDI-s2-kkb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="WDI-s2-kkb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -165,6 +165,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1Ub-rK-5iu" kind="show" identifier="PickCategory" id="5GO-2T-CwZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -330,6 +333,58 @@
             </objects>
             <point key="canvasLocation" x="2883.75" y="0.0"/>
         </scene>
+        <!--Category Picker View Controller-->
+        <scene sceneID="ep0-I1-e9G">
+            <objects>
+                <tableViewController id="1Ub-rK-5iu" customClass="CategoryPickerViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="w8l-NG-Wjx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="9kf-ZF-wJA">
+                                <rect key="frame" x="0.0" y="50" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9kf-ZF-wJA" id="ZB9-uL-hHh">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQo-AA-YrS">
+                                            <rect key="frame" x="16" y="14.5" width="31" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1001" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yNn-5G-KRy">
+                                            <rect key="frame" x="282.5" y="11" width="21.5" height="21.5"/>
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WQo-AA-YrS" firstAttribute="leading" secondItem="ZB9-uL-hHh" secondAttribute="leadingMargin" id="SYF-zf-c2g"/>
+                                        <constraint firstItem="WQo-AA-YrS" firstAttribute="centerY" secondItem="ZB9-uL-hHh" secondAttribute="centerY" id="bbi-2E-ivZ"/>
+                                        <constraint firstItem="yNn-5G-KRy" firstAttribute="trailing" secondItem="ZB9-uL-hHh" secondAttribute="trailingMargin" id="fIC-7k-kWQ"/>
+                                        <constraint firstItem="yNn-5G-KRy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WQo-AA-YrS" secondAttribute="trailing" constant="8" symbolic="YES" id="y3L-n1-5ve"/>
+                                        <constraint firstItem="yNn-5G-KRy" firstAttribute="centerY" secondItem="ZB9-uL-hHh" secondAttribute="centerY" id="y75-jc-eXZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="VZg-a0-8WH" kind="unwind" identifier="PickedCategory" unwindAction="categoryPickerDidPickCategory:" id="ZOt-Qr-UF8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1Ub-rK-5iu" id="CrQ-IF-AE5"/>
+                            <outlet property="delegate" destination="1Ub-rK-5iu" id="z9f-5p-hL8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="8ST-Ud-IzX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5m3-ka-pTE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="VZg-a0-8WH" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3776.25" y="0.0"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YEq-yH-RDb">
             <objects>
@@ -339,6 +394,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="6IO-TJ-QKz" kind="relationship" relationship="viewControllers" id="iGp-XU-jkF"/>
@@ -368,12 +424,17 @@
             <point key="canvasLocation" x="1128.75" y="0.0"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemOrangeColor"/>
     <resources>
+        <image name="checkmark.seal.fill" catalog="system" width="128" height="124"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

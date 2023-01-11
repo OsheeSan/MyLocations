@@ -31,11 +31,23 @@ class CategoryPickerViewController: UITableViewController {
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         for i in 0..<categories.count {
             if categories[i] == selectedCategoryName {
                 selectedIndexPath = IndexPath(row: i, section: 0)
                 break
+            }
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(
+        for segue: UIStoryboardSegue,
+        sender: Any?
+    ) {
+        if segue.identifier == "PickedCategory" {
+            let cell = sender as! UITableViewCell
+            if let indexPath = tableView.indexPath(for: cell) {
+                selectedCategoryName = categories[indexPath.row]
             }
         }
     }
@@ -55,14 +67,9 @@ class CategoryPickerViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
                                                  for: indexPath)
         
-        let categoryName = categories[indexPath.row]
-        cell.textLabel!.text = categoryName
+        configureText(for: cell, at: indexPath)
+        configureCheckmark(for: cell, at: indexPath)
         
-        if categoryName == selectedCategoryName {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
         return cell
     }
     
@@ -71,15 +78,27 @@ class CategoryPickerViewController: UITableViewController {
         didSelectRowAt indexPath: IndexPath
     ) {
         if indexPath.row != selectedIndexPath.row {
-            if let newCell = tableView.cellForRow(at: indexPath) {
-                newCell.accessoryType = .checkmark
-            }
-            if let oldCell = tableView.cellForRow(
-                at: selectedIndexPath) {
-                oldCell.accessoryType = .none
-            }
             selectedIndexPath = indexPath
         }
+    }
+    
+    //MARK: - Helper methods
+    func configureCheckmark(
+        for cell: UITableViewCell, at index: IndexPath
+    ) {
+        let checkedIconView = cell.viewWithTag(1001) as! UIImageView
+        if index == selectedIndexPath {
+            checkedIconView.isHidden = false
+        } else {
+            checkedIconView.isHidden = true
+        }
+    }
+    
+    func configureText(
+        for cell: UITableViewCell, at index: IndexPath
+    ) {
+      let label = cell.viewWithTag(1000) as! UILabel
+        label.text = categories[index.row]
     }
 }
 

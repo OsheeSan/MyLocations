@@ -16,6 +16,7 @@
 		848F016B296ECC8200EC83CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848F0169296ECC8200EC83CE /* LaunchScreen.storyboard */; };
 		848F0173296F19E000EC83CE /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0172296F19E000EC83CE /* LocationDetailsViewController.swift */; };
 		84C020D5296F299500BBD0DE /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C020D4296F299500BBD0DE /* CategoryPickerViewController.swift */; };
+		84C020D7296F61DE00BBD0DE /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C020D6296F61DE00BBD0DE /* HudView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		848F016C296ECC8200EC83CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848F0172296F19E000EC83CE /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		84C020D4296F299500BBD0DE /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
+		84C020D6296F61DE00BBD0DE /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				848F0169296ECC8200EC83CE /* LaunchScreen.storyboard */,
 				848F016C296ECC8200EC83CE /* Info.plist */,
 				848F0164296ECC8000EC83CE /* MyLocations.xcdatamodeld */,
+				84C020D6296F61DE00BBD0DE /* HudView.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				848F015C296ECC8000EC83CE /* AppDelegate.swift in Sources */,
 				848F0166296ECC8000EC83CE /* MyLocations.xcdatamodeld in Sources */,
 				848F015E296ECC8000EC83CE /* SceneDelegate.swift in Sources */,
+				84C020D7296F61DE00BBD0DE /* HudView.swift in Sources */,
 				848F0173296F19E000EC83CE /* LocationDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
