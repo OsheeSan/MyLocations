@@ -17,6 +17,13 @@
 		848F0173296F19E000EC83CE /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F0172296F19E000EC83CE /* LocationDetailsViewController.swift */; };
 		84C020D5296F299500BBD0DE /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C020D4296F299500BBD0DE /* CategoryPickerViewController.swift */; };
 		84C020D7296F61DE00BBD0DE /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C020D6296F61DE00BBD0DE /* HudView.swift */; };
+		84C020D9296F6EDD00BBD0DE /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C020D8296F6EDD00BBD0DE /* Functions.swift */; };
+		84C020DC296F721200BBD0DE /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C020DA296F721200BBD0DE /* Location+CoreDataClass.swift */; };
+		84C020DD296F721200BBD0DE /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C020DB296F721200BBD0DE /* Location+CoreDataProperties.swift */; };
+		84D8BC072977288A00F544C5 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8BC062977288A00F544C5 /* LocationsViewController.swift */; };
+		84D8BC0D29773AB800F544C5 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8BC0C29773AB800F544C5 /* LocationCell.swift */; };
+		84D8BC0F297ACE7E00F544C5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8BC0E297ACE7E00F544C5 /* MapViewController.swift */; };
+		84D8BC14297B097300F544C5 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8BC13297B097300F544C5 /* Vibration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +39,13 @@
 		848F0172296F19E000EC83CE /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		84C020D4296F299500BBD0DE /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		84C020D6296F61DE00BBD0DE /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		84C020D8296F6EDD00BBD0DE /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		84C020DA296F721200BBD0DE /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84C020DB296F721200BBD0DE /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		84D8BC062977288A00F544C5 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		84D8BC0C29773AB800F544C5 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		84D8BC0E297ACE7E00F544C5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		84D8BC13297B097300F544C5 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +62,8 @@
 		848F014F296ECC8000EC83CE = {
 			isa = PBXGroup;
 			children = (
+				84C020DA296F721200BBD0DE /* Location+CoreDataClass.swift */,
+				84C020DB296F721200BBD0DE /* Location+CoreDataProperties.swift */,
 				848F015A296ECC8000EC83CE /* MyLocations */,
 				848F0159296ECC8000EC83CE /* Products */,
 			);
@@ -64,19 +80,48 @@
 		848F015A296ECC8000EC83CE /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
+				84D8BC12297B095D00F544C5 /* Enums */,
+				84D8BC11297B094700F544C5 /* Objects */,
+				84D8BC10297B091500F544C5 /* ViewControllers */,
 				848F015B296ECC8000EC83CE /* AppDelegate.swift */,
 				848F015D296ECC8000EC83CE /* SceneDelegate.swift */,
-				848F015F296ECC8000EC83CE /* CurrentLocationViewController.swift */,
-				848F0172296F19E000EC83CE /* LocationDetailsViewController.swift */,
-				84C020D4296F299500BBD0DE /* CategoryPickerViewController.swift */,
 				848F0161296ECC8000EC83CE /* Main.storyboard */,
 				848F0167296ECC8200EC83CE /* Assets.xcassets */,
 				848F0169296ECC8200EC83CE /* LaunchScreen.storyboard */,
 				848F016C296ECC8200EC83CE /* Info.plist */,
 				848F0164296ECC8000EC83CE /* MyLocations.xcdatamodeld */,
-				84C020D6296F61DE00BBD0DE /* HudView.swift */,
+				84C020D8296F6EDD00BBD0DE /* Functions.swift */,
 			);
 			path = MyLocations;
+			sourceTree = "<group>";
+		};
+		84D8BC10297B091500F544C5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				848F015F296ECC8000EC83CE /* CurrentLocationViewController.swift */,
+				84D8BC062977288A00F544C5 /* LocationsViewController.swift */,
+				84D8BC0E297ACE7E00F544C5 /* MapViewController.swift */,
+				848F0172296F19E000EC83CE /* LocationDetailsViewController.swift */,
+				84C020D4296F299500BBD0DE /* CategoryPickerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		84D8BC11297B094700F544C5 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				84C020D6296F61DE00BBD0DE /* HudView.swift */,
+				84D8BC0C29773AB800F544C5 /* LocationCell.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		84D8BC12297B095D00F544C5 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				84D8BC13297B097300F544C5 /* Vibration.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,11 +195,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D8BC14297B097300F544C5 /* Vibration.swift in Sources */,
 				84C020D5296F299500BBD0DE /* CategoryPickerViewController.swift in Sources */,
 				848F0160296ECC8000EC83CE /* CurrentLocationViewController.swift in Sources */,
 				848F015C296ECC8000EC83CE /* AppDelegate.swift in Sources */,
+				84C020D9296F6EDD00BBD0DE /* Functions.swift in Sources */,
+				84D8BC072977288A00F544C5 /* LocationsViewController.swift in Sources */,
+				84C020DD296F721200BBD0DE /* Location+CoreDataProperties.swift in Sources */,
+				84D8BC0F297ACE7E00F544C5 /* MapViewController.swift in Sources */,
+				84D8BC0D29773AB800F544C5 /* LocationCell.swift in Sources */,
 				848F0166296ECC8000EC83CE /* MyLocations.xcdatamodeld in Sources */,
 				848F015E296ECC8000EC83CE /* SceneDelegate.swift in Sources */,
+				84C020DC296F721200BBD0DE /* Location+CoreDataClass.swift in Sources */,
 				84C020D7296F61DE00BBD0DE /* HudView.swift in Sources */,
 				848F0173296F19E000EC83CE /* LocationDetailsViewController.swift in Sources */,
 			);
@@ -306,7 +358,9 @@
 				DEVELOPMENT_TEAM = 3R4JNXS3X7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyLocations/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Add photos to your locations";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app lets you keep track of interesting places. It needs access to the GPS coordinates for your location";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Add photos to your locations";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -337,7 +391,9 @@
 				DEVELOPMENT_TEAM = 3R4JNXS3X7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyLocations/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Add photos to your locations";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app lets you keep track of interesting places. It needs access to the GPS coordinates for your location";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Add photos to your locations";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

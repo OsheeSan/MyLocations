@@ -77,6 +77,7 @@ class CategoryPickerViewController: UITableViewController {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
+        Vibration.selection.vibrate()
         if indexPath.row != selectedIndexPath.row {
             selectedIndexPath = indexPath
         }
